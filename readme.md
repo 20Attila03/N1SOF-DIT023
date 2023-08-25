@@ -8,14 +8,4 @@ This is my workspace where I show my learning process and also where my codes ar
 
 ## Details
 
-TBA
-
-## Projects
-- [Complete]()
-- [001 - Logic](#001---logic)
-
-## Project details
-### 001 - Logic
-Folder for the project: [/Projects/001-Logic](/Projects/001-Logic/)
-
-This is an introductionary material where we start with the basics of Logic in Mathematics.
+This repo contains Attila Matolcsy's own personal notes from the University of Gothenburg's Software Engineering and Management Bsc. Programme's Mathematical Foundations for SEM course.
