@@ -175,7 +175,7 @@ For propositions we commonly use lettering starting from $p$, so $p,q,r,s,\dots$
   \item Contingency:
   It's neither tautology nor contradiction.\\
   The output proposition is not related to the input propositions.
-  
+
   \item Equivalents:\\
   Statements that are equal
   $$p \wedge T \equiv p \qquad p \wedge 1 \equiv p$$
@@ -227,14 +227,64 @@ We started from $1\,1\,1$ or $111_{b}$, we always subtract 1 from our binary num
 Note that binary digits can take up only 2 values: $0, 1$. So when you subtract $1$ from a binary number ending with $0$, it doesn't become $9$, but rather $1$ again. So $10_{b}-1 \neq 09$, but rather $10_{b}-1 = 01_{b}$. Also we notate the binary numbers usually with $_{b}$ which stands for binary or $_{2}$ which stands for the number of values a proposition can have (True, False / $1, 0$).
 
 \newpage
-\subsection{Quantifiers (Predicate logic)}
+\subsection{Predicate logic}
 
 We call statements that contain variables predicates.
+The truthiness of these values depends on the values we substitute for the variables.
 
+\begin{enumerate}[label=Def. \arabic*:, leftmargin=3.5em, align=left]
+  \setcounter{enumi}{10}
+  \item Propositional logic: A logic, where everything is atomic, so everything is either true or false.
+  
+  \item Predicate logic: A logic where we formalise logic in an extended way
+\end{enumerate}
+
+Predicate logic contains:
+\begin{itemize}
+  \item All components from propositional logic
+  
+  \item Terms
+  
+  \item Quantifiers
+\end{itemize}
+
+\begin{enumerate}[label=Def. \arabic*:, leftmargin=3.5em, align=left]
+  \setcounter{enumi}{12}
+  \item Connections: $\neg, \wedge, \vee, \oplus, \Rightarrow, \Leftrightarrow$\\
+  The relation between 2 statements.
+
+  \item Constants: $a,b,c$\\
+  Fix values.
+
+  \item Variables: $x,y,z$\\
+  Uncertain values.
+
+  \item Predicate symbols: $P, Q, R$
+  
+  \item Functions: $f, g$
+  
+  \item Quantifiers:
+  \begin{itemize}[label=-,leftmargin=2.5em]
+    \item Universal quantifier: $\forall$ -- "For \underline{A}ll"
+    \item Existential quantifier: $\exists$ -- "There \underline{E}xists"
+  \end{itemize}
+
+  \item Identity: $=$\\
+  The equal sign means, that something means excatly something else.
+
+  \item Unary predicate: A statement for a variable.\\
+  e.g.: $x$ is a \textbf{cat}. 
+  
+  \item Binary predicate: A statement for another statement.\\
+  e.g.: $x$ is the son of $y$. 
+\end{enumerate}
 
 \section{Credits}
 
 \href{https://link.springer.com/book/10.1007/978-1-4939-2766-1}{Real Analysis - Foundations and Functions of One Variable -- by: Miklós Laczkovich , Vera T. Sós}\\
-\href{https://link.springer.com/book/10.1007/978-1-4939-7369-9}{Real Analysis - Series, Functions of Several Variables, and Applications -- by: Miklós Laczkovich , Vera T. Sós}
+\href{https://www.typotex.hu/book/5080/laczkovich_miklos_t_sos_vera_valos_analizis_1}{Valós Analízis I. -- by: Miklós Laczkovich , Vera T. Sós}
+
+\href{https://link.springer.com/book/10.1007/978-1-4939-7369-9}{Real Analysis - Series, Functions of Several Variables, and Applications -- by: Miklós Laczkovich , Vera T. Sós}\\
+\href{https://www.typotex.hu/book/5755/laczkovich_miklos_t_sos_vera_valos_analizis_2}{Valós Analízis II. -- by: Miklós Laczkovich , Vera T. Sós}
 
 \end{document}
