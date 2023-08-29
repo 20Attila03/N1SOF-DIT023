@@ -34,21 +34,23 @@
 \tableofcontents
 
 \section{About}
+
 This document is Attila Matolcsy's own personal notes from the University of Gothenburg's Software Engineering and Management Bsc. Programme's Mathematical Foundations for SEM course.
 
 \subsection*{Introduction day}
+
 Lessons are not mandatory, nor are the TA lessons. We can choose our TA groups we'd like to work in.
 
 Working on projects and assignments are also allowed in groups of up to 3 members.
 
-On Canvas there are educational materails, course literatures (although not mandatory) and more information is available.
+On Canvas there are educational materials, course literatures (although not mandatory) and more information is available.
 
 The teacher can be contacted through e-mail at \href{mailto:christian.berger@gu.se}{christian.berger@gu.se}.
 
-
 \section{Logic}
 
-Logic means the meaning of mathematical statements and basis of reasoning.\\
+Mathematical logic works with statements. Statements are declerative, meaning they are either true or false.
+
 We have applications, in the design of computing systems we usually use $1$s and $0$s.
 
 Proofs are mathematical arguments and these are essenctial for programs.\\
@@ -57,110 +59,182 @@ We use proofs in computer security systems as well.
 Theorems are proven mathematical statements and propositions are statements that are either True (T) or False (F).\\
 For propositions we commonly use lettering starting from $p$, so $p,q,r,s,\dots$
 
+\subsection{Logical Operators}
 
 \begin{enumerate}[label=Def. \arabic*:, leftmargin=3.5em, align=left]
-  \item Opposites: The opposite of the proposition ($T \rightarrow F \And F \rightarrow T$)\\Notation: $\neg$
+  \item Negation: The opposite of the proposition ($T \rightarrow F \And F \rightarrow T$)\\
+  Notation: $\neg$
+
   \item Conjuction: logical AND, the output of a conjuction is only true when the input statements are all true.\\
   Notation: $\wedge$
-  \vspace{.25cm}\\
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \wedge q$ \\ \hline 
-    $T$ & $T$ & $T$ \\
-    $T$ & $F$ & $F$ \\
-    $F$ & $T$ & $F$ \\
-    $F$ & $F$ & $F$ \\
-  \end{tabular} \qquad
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \wedge q$ \\ \hline 
-    $1$ & $1$ & $1$ \\
-    $1$ & $0$ & $0$ \\
-    $0$ & $1$ & $0$ \\
-    $0$ & $0$ & $0$ \\
-  \end{tabular}
-  \item OR: logical OR, the output of a logical OR is true when at least one of the input statements are true.\\
+  \begin{center}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \wedge q$ \\ \hline 
+      $T$ & $T$ & $T$ \\
+      $T$ & $F$ & $F$ \\
+      $F$ & $T$ & $F$ \\
+      $F$ & $F$ & $F$ \\
+    \end{tabular} \qquad
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \wedge q$ \\ \hline 
+      $1$ & $1$ & $1$ \\
+      $1$ & $0$ & $0$ \\
+      $0$ & $1$ & $0$ \\
+      $0$ & $0$ & $0$ \\
+    \end{tabular}
+  \end{center}
+
+  \item Disjuction: logical OR, the output of a logical OR is true when at least one of the input statements are true.\\
   Notation: $\vee$
-  \vspace{.25cm}\\
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \vee q$ \\ \hline 
-    $T$ & $T$ & $T$ \\
-    $T$ & $F$ & $T$ \\
-    $F$ & $T$ & $T$ \\
-    $F$ & $F$ & $F$ \\
-  \end{tabular} \qquad
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \vee q$ \\ \hline 
-    $1$ & $1$ & $1$ \\
-    $1$ & $0$ & $1$ \\
-    $0$ & $1$ & $1$ \\
-    $0$ & $0$ & $0$ \\
-  \end{tabular}
+  \begin{center}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \vee q$ \\ \hline 
+      $T$ & $T$ & $T$ \\
+      $T$ & $F$ & $T$ \\
+      $F$ & $T$ & $T$ \\
+      $F$ & $F$ & $F$ \\
+    \end{tabular} \qquad
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \vee q$ \\ \hline 
+      $1$ & $1$ & $1$ \\
+      $1$ & $0$ & $1$ \\
+      $0$ & $1$ & $1$ \\
+      $0$ & $0$ & $0$ \\
+    \end{tabular}
+  \end{center}
+
   \item Excl.OR: exclusive OR, the output of an exclusive OR is true when only one of the input statements are true.\\
   Notation: $\oplus$
-  \vspace{.25cm}\\
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \oplus q$ \\ \hline 
-    $T$ & $T$ & $F$ \\
-    $T$ & $F$ & $T$ \\
-    $F$ & $T$ & $T$ \\
-    $F$ & $F$ & $F$ \\
-  \end{tabular} \qquad
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \oplus q$ \\ \hline 
-    $1$ & $1$ & $0$ \\
-    $1$ & $0$ & $1$ \\
-    $0$ & $1$ & $1$ \\
-    $0$ & $0$ & $0$ \\
-  \end{tabular}
+  \begin{center}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \oplus q$ \\ \hline 
+      $T$ & $T$ & $F$ \\
+      $T$ & $F$ & $T$ \\
+      $F$ & $T$ & $T$ \\
+      $F$ & $F$ & $F$ \\
+    \end{tabular} \qquad
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \oplus q$ \\ \hline 
+      $1$ & $1$ & $0$ \\
+      $1$ & $0$ & $1$ \\
+      $0$ & $1$ & $1$ \\
+      $0$ & $0$ & $0$ \\
+    \end{tabular}
+  \end{center}
+
   \item Implication: implication (AKA: If this then this), the output of an implication is false when the first statement is true, but the implied statement is false. In other cases it's true.\\
   Notation: $\Rightarrow$
-  \vspace{.25cm}\\
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \Rightarrow q$ \\ \hline 
-    $T$ & $T$ & $T$ \\
-    $T$ & $F$ & $F$ \\
-    $F$ & $T$ & $T$ \\
-    $F$ & $F$ & $T$ \\
-  \end{tabular} \qquad
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \Rightarrow q$ \\ \hline 
-    $1$ & $1$ & $1$ \\
-    $1$ & $0$ & $0$ \\
-    $0$ & $1$ & $1$ \\
-    $0$ & $0$ & $1$ \\
-  \end{tabular}
+  \begin{center}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \Rightarrow q$ \\ \hline 
+      $T$ & $T$ & $T$ \\
+      $T$ & $F$ & $F$ \\
+      $F$ & $T$ & $T$ \\
+      $F$ & $F$ & $T$ \\
+    \end{tabular} \qquad
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \Rightarrow q$ \\ \hline 
+      $1$ & $1$ & $1$ \\
+      $1$ & $0$ & $0$ \\
+      $0$ & $1$ & $1$ \\
+      $0$ & $0$ & $1$ \\
+    \end{tabular}
+  \end{center}
+  
+  \newpage
+
   \item Biconditional statements: bidirectional implication, the output of a biconditional statement is true when the both of the propositions have the exact same value\\
   Notation: $\Leftrightarrow$
-  \vspace{.25cm}\\
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \Leftrightarrow q$ \\ \hline 
-    $T$ & $T$ & $T$ \\
-    $T$ & $F$ & $F$ \\
-    $F$ & $T$ & $F$ \\
-    $F$ & $F$ & $T$ \\
-  \end{tabular} \qquad
-  \begin{tabular}{cc|c}
-    $p$ & $q$ & $p \Leftrightarrow q$ \\ \hline 
-    $1$ & $1$ & $1$ \\
-    $1$ & $0$ & $0$ \\
-    $0$ & $1$ & $0$ \\
-    $0$ & $0$ & $1$ \\
-  \end{tabular}
-  \newpage
-  \item Tautology, A tautology is when the statement is always true, regardless of the propositions' values.\\
-  e.g.: $p \vee \neg p \equiv T \equiv 1$
-  \item Contardiction, A contradiction is when the statement is always false, regardless of the propositions' values.\\
-  e.g.: $p \wedge \neg p \equiv F \equiv 0$
+  \begin{center}
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \Leftrightarrow q$ \\ \hline 
+      $T$ & $T$ & $T$ \\
+      $T$ & $F$ & $F$ \\
+      $F$ & $T$ & $F$ \\
+      $F$ & $F$ & $T$ \\
+    \end{tabular} \qquad
+    \begin{tabular}{cc|c}
+      $p$ & $q$ & $p \Leftrightarrow q$ \\ \hline 
+      $1$ & $1$ & $1$ \\
+      $1$ & $0$ & $0$ \\
+      $0$ & $1$ & $0$ \\
+      $0$ & $0$ & $1$ \\
+    \end{tabular}
+  \end{center}
+
+  \item Tautology, A tautology is when the statement is always true, regardless of the propositions' values.
+  \begin{center}
+    e.g.: $p \vee \neg p \equiv T \equiv 1$
+  \end{center}
+
+  \item Contardiction, A contradiction is when the statement is always false, regardless of the propositions' values.
+  \begin{center}
+    e.g.: $p \wedge \neg p \equiv F \equiv 0$
+  \end{center}
+
   \item Contingency:
-  It's neither tautology nor contradiction.\\The output proposition is not related to the input propositions.
+  It's neither tautology nor contradiction.\\
+  The output proposition is not related to the input propositions.
+  
   \item Equivalents:\\
-  Statements that are equal\\
-  $p \wedge T \equiv p \quad p \wedge 1 \equiv p$\\
-  $p \vee T \equiv T \quad p \vee 1 \equiv 1$\\
-  $p \wedge F \equiv F \quad p \wedge 0 \equiv 0$\\
-  $p \vee F \equiv p \quad p \vee 0 \equiv p$
-    
+  Statements that are equal
+  $$p \wedge T \equiv p \qquad p \wedge 1 \equiv p$$
+  $$p \vee T \equiv T \qquad p \vee 1 \equiv 1$$
+  $$p \wedge F \equiv F \qquad p \wedge 0 \equiv 0$$
+  $$p \vee F \equiv p \qquad p \vee 0 \equiv p$$
 \end{enumerate}
 
+\subsection{Using binary numbers for truth tables}
+In truth tables we always shown all the possible variations of each statement. During this it's easier to view those as binary numbers, so we can easily check if we written down all the possible combinations.
 
+\begin{center}
+  \colorbox{yellow!30}{
+    \begin{minipage}{\linewidth-1cm}
+      Note that this is not a requirement that you do it this this way.\\
+      This is just a surefire method to make sure you do not miss any cases, also that all of your truth tables are similar.
+    \end{minipage}
+  }
+\end{center}
+When looking at the number of propositions we can learn that there are $o = 2^{p}$ options, where $o$ is the number of options and $p$ is the number of propositions.
+
+So in case of $3$ propositions, we have $2^{3} = 8$ options.\\
+These are:
+\begin{center}
+  \begin{tabular}{ccc||ccc}
+    $p$ & $q$ & $r$ & $p$ & $q$ & $r$ \\ \hline
+    $T$ & $T$ & $T$ & $1$ & $1$ & $1$ \\
+    $T$ & $T$ & $F$ & $1$ & $1$ & $0$ \\
+    $T$ & $F$ & $T$ & $1$ & $0$ & $1$ \\
+    $T$ & $F$ & $F$ & $1$ & $0$ & $0$ \\
+    $F$ & $T$ & $T$ & $0$ & $1$ & $1$ \\
+    $F$ & $T$ & $F$ & $0$ & $1$ & $0$ \\
+    $F$ & $F$ & $T$ & $0$ & $0$ & $1$ \\
+    $F$ & $F$ & $F$ & $0$ & $0$ & $0$ \\
+  \end{tabular}\vspace{.25cm}
+  \qquad
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    $\dots$ & $p$ & $q$ & $r$ \\ \hline
+    $x$ increases from right to left: $2^{x}$ & & & \\
+    This is what the binary number represents: & $2^2 = 4$ & $2^1 = 2$ & $2^0 = 1$ \\ \hline
+    This is our binary number: & $1 \left( T \right)$ & $1 \left( T \right)$ & $1 \left( T \right)$ \\ \hline
+    We need to sum this: $4 + 2 + 1 = 7$ & $1 \cdot 4 = 4$ & $1 \cdot 2 = 2$ & $1 \cdot 1 = 1$ \\ \hline
+  \end{tabular}
+\end{center}
+
+We started from $1\,1\,1$ or $111_{b}$, we always subtract 1 from our binary number, so it goes $110_{b}, 101_{b}, 100_{b}$, etc.
+
+Note that binary digits can take up only 2 values: $0, 1$. So when you subtract $1$ from a binary number ending with $0$, it doesn't become $9$, but rather $1$ again. So $10_{b}-1 \neq 09$, but rather $10_{b}-1 = 01_{b}$. Also we notate the binary numbers usually with $_{b}$ which stands for binary or $_{2}$ which stands for the number of values a proposition can have (True, False / $1, 0$).
+
+\newpage
+\subsection{Quantifiers (Predicate logic)}
+
+We call statements that contain variables predicates.
+
+
+\section{Credits}
+
+\href{https://link.springer.com/book/10.1007/978-1-4939-2766-1}{Real Analysis - Foundations and Functions of One Variable -- by: Miklós Laczkovich , Vera T. Sós}\\
+\href{https://link.springer.com/book/10.1007/978-1-4939-7369-9}{Real Analysis - Series, Functions of Several Variables, and Applications -- by: Miklós Laczkovich , Vera T. Sós}
 
 \end{document}
