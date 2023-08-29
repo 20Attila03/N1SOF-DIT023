@@ -43,7 +43,7 @@ These are all the notes from lessons, unprocessed.
 \end{minipage}
 This document has typos in it, please use the main document that is cleaned up!
 
-\section{\date{\nth{28} August 2023}}
+\section{\nth{28} August 2023}
 
 \subsection{Introduction to the course}
 
@@ -175,5 +175,140 @@ $p \wedge \neg p \equiv 0$ \\
   $1$ & $0$ & $0$ \\
   $0$ & $1$ & $0$ \\
 \end{tabular}
+
+
+\section{\nth{29} August 2023}
+
+\subsection{Binary counting}
+
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  $\dots$ & $p$ & $q$ & $r$ & $s$ \\ \hline
+  $x$ increases from right to left: $2^{x}$ & & & & \\
+  This is what the binary number represents: & $2^3 = 8$ & $2^2 = 4$ & $2^1 = 2$ & $2^0 = 1$ \\ \hline
+  This is our binary number: & $0 \left( F \right)$ & $1 \left( T \right)$ & $0 \left( F \right)$ & $1 \left( T \right)$ \\ \hline
+  We need to sum this: $0 + 4 + 0 + 1 = 5$ & $0 \cdot 8 = 0$ & $1 \cdot 4 = 4$ & $0 \cdot 2 = 0$ & $1 \cdot 1 = 1$ \\ \hline
+\end{tabular} \vspace{.5cm}
+
+
+\subsection{Predicate Logic}
+
+Propositional logic: everything is atomic
+
+Predicate logic: Formalism of propositional logic is extended and more complicated expressions are possible to be ued for formal inference.
+
+Predicate logic contains:
+
+\begin{itemize}
+  \item all components from propositional logic
+  \item terms (E.g.: \underline{Alice} likes \underline{BOS} [Underlined is a term])
+  \item quantifiers:
+  \begin{itemize}
+    \item something is always True
+    \item something is sometimes True
+    \item something is never True
+  \end{itemize}
+  \item Predicate symbols: $P, Q, R$
+  \item functions: $f, g$
+  \item quantifiers: $\forall, \exists$
+  \item identity: $=$
+\end{itemize}
+
+Example: "There is a smallest number."
+
+Collection of al persons, ideas, symbols, data structures that affect the logical argument under consideration
+
+Elements of the inverese of the discourse are called individuals
+
+\begin{tikzpicture}
+  \node (a) {$\mathbb{N}$};
+  \node (b) [right = .25cm of a] {$\mathbb{Z}$};
+  \node (c) [right = .5cm of b] {$\mathbb{Q}$};
+  \node (d) [right = .75cm of c] {$\mathbb{R}$};
+  \begin{pgfonlayer}{bg}
+    \node[draw=yellow, fill=yellow!10, ellipse, fit = (a) (b) (c) (d)] (setD) { };
+    \node[draw=red, fill=red!10, ellipse, fit = (a) (b) (c)] (setC) { };
+    \node[draw=blue, fill=blue!10, ellipse, fit = (a) (b)] (setB) { };
+    \node[draw=green, fill=green!10, ellipse, fit = (a)] (setA) { };
+\end{pgfonlayer}
+\end{tikzpicture}
+
+\dots
+
+Order of args is important
+
+unary predicate: "x is a cat"
+binary predicate: "y is mother of y"
+
+unary predicates descripbe properties of object:
+$ p \left( x \right) \Rightarrow $ x has property $ P $
+
+interpret as: of a predicate ($P$) in a set of objects (called $A$) is a set og those elements of A (AKA subset) that have property p:
+
+$ \left\{ \alpha \in A \quad | \quad P \left( \alpha \right)\right\} $
+
+$ \left\{ (\alpha, \beta) \in A \times A \quad | \quad Q \left( \alpha, \beta \right)\right\} $
+
+
+Atomic formula
+\begin{enumerate}
+  \item predicate name + arguments
+  \item an identity $t_1 = t_2$
+\end{enumerate}
+
+Atomic formulas are statements that can be combined woth logical connectioves
+
+$M \left( j, p \right) \rightarrow \neg M \left( p, j \right)$
+
+If Jane is Paul's mother, then Paul is not Jame's mother.
+
+If all arguments of a predicate are individual constants, the resulting formula must be \textcircled{T} or \textcircled{F}
+
+Example:
+\begin{tabular}{|c|cccc|}
+  \hline
+  & Bob & Jane & Alice & Paul \\ \hline
+  Bob & F & F & F & F \\
+  Jane & F & F & T & T \\
+  Alice & F & F & F & F \\
+  Paul & F & F & F & F \\
+  \hline  
+\end{tabular}
+
+$M(a, b)$
+
+Inly method that assigns truth values to all possible combinations of individuals is called assignment of the predicate
+
+
+
+Universal quantifier: $\forall$
+
+something is true for all infividuals
+
+Existential quantifier: $\exists$
+
+something is for at least one individual
+
+\begin{tabular}{cl}
+  $\forall \times A$ & $\forall$ = for all \\
+  & $\times$ is bound by the quantifier \\
+  & $A$ is the scope
+\end{tabular}
+
+Everone gets a break once in a while
+
+$B(x) := $ "x gets a break in a while"\\
+$\forall \times B\left(x\right)$
+
+Some people don't eat meat
+
+$p(x) := $ "x eats meat"\\
+$\exists \times \left( \neg P \left( x \right)  \right)$
+
+% Wait, are we still learning HS stuff?
+
+$\exists x \left( \forall y k \left( x, y \right) \right)$
+
+$\neg \exists x A\left( x \right) \equiv \forall x \neg A$
 
 \end{document}
