@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage[margin=2cm]{geometry}
+\usepackage[super]{nth}
+\usepackage{calc}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+
+\usepackage{pdflscape}
+
+\usepackage[hidelinks, pagebackref, bookmarksopen, bookmarksnumbered]{hyperref}
+
+\pgfdeclarelayer{bg}
+\pgfsetlayers{bg,main}
+
+\usepackage{esvect}
+
+\usetikzlibrary{arrows,positioning,shapes,fit,calc}
+
+\title{Mathematical Foundations for Software Engineering \\[1ex] \large Course notes}
+\author{Attila Matolcsy}
+\date{\nth{25} August 2023 - Present}
+
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+\usepackage[parfill]{parskip}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{About}
+
+This document is Attila Matolcsy's own personal notes from the University of Gothenburg's Software Engineering and Management Bsc. Programme's Mathematical Foundations for SEM course.
+
+These are all the notes from TA sessions, mostly unprocessed.
+
+\section{Logic}
+
+R = Annual revenue
+N = Net profit
+
+A = Acme computer
+S = Nadir Software
+Q = Quixote Media
+
+\begin{itemize}
+  \item $R(A) = 138 \text{ Bil. \$}$
+  
+  \item $N(A) = 8 \text{ Bil. \$}$
+  
+  \item $A(S) = 87 \text{ Bil. \$}$
+  
+  \item $N(S) = 5 \text{ Bil. \$}$
+  
+  \item $A(Q) = 111 \text{ Bil. \$}$
+  
+  \item $N(Q) = 13 \text{ Bil. \$}$
+\end{itemize}
+
+\begin{enumerate}[label=\alph*)]
+  \item $F$
+  
+  \item $T \wedge T \equiv T$
+  
+  \item $F \vee T \equiv T$
+  
+  \item $F \Rightarrow T \equiv T$
+  
+  \item $T \Leftrightarrow T \equiv T$
+\end{enumerate}
+
+$$\left(p \vee q \vee r\right) \wedge \left(\neg p \vee \neg q \vee \neg r\right)$$
+$$A = \left(p \vee q \vee r\right)$$
+$$B = \left(\neg p \vee \neg q \vee \neg r\right)$$
+$$C = A \wedge B$$
+
+\begin{landscape}
+  \begin{tabular}{cccc|c|c|c|c|c|c|c|c|c|c}
+    & & & & $A$ & $B$ & $C$ & $D$ & $E$ & $F$ & $G$ & $H$ & $I$ & \\
+    $p$ & $q$ & $r$ & $s$ & $p \vee \neg q \vee s$ & $\neg p \vee \neg r \vee s$ & $\neg p \vee \neg r \vee \neg s$ & $\neg p \vee q \vee \neg s$ & $q \vee r \vee \neg s$ & $q \vee \neg r \vee \neg s$ & $\neg p \vee \neg q \vee \neg s$ & $p \vee r \vee s$ & $p \vee r \vee \neg s$ & $\left| \left\{ A - I \right\} \right|$ \\ \hline
+    $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $T$ & $T$ & $F$ & $T$ & $T$ & $7$ \\
+    $T$ & $T$ & $T$ & $F$ & $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $8$ \\
+    $T$ & $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $T$ & $8$ \\
+    $T$ & $T$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $\underline{9}$ \\
+    $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $F$ & $F$ & $T$ & $F$ & $T$ & $T$ & $T$ & $6$ \\
+    $T$ & $F$ & $T$ & $F$ & $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $8$ \\
+    $T$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $7$ \\
+    $T$ & $F$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $\underline{9}$ \\
+    $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $\underline{9}$ \\
+    $F$ & $T$ & $T$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $\underline{9}$ \\
+    $F$ & $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $8$ \\
+    $F$ & $T$ & $F$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $8$ \\
+    $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $T$ & $T$ & $8$ \\
+    $F$ & $F$ & $T$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $\underline{9}$ \\
+    $F$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $T$ & $T$ & $F$ & $7$ \\
+    $F$ & $F$ & $F$ & $F$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $T$ & $F$ & $T$ & $8$ \\
+  \end{tabular}
+\end{landscape}
+
+
+
+\end{document}
