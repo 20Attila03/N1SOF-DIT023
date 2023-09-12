@@ -130,17 +130,8 @@ Def 5: implication / conditional statements \\
   $0$ & $0$ & $1$ & $1$ & $1$
 \end{tabular}
 
-Def 6: Biconditional statements, if and only if, iff\\
-\begin{tabular}{cc|c}
-  $p$ & $q$ & $p \Leftrightarrow q$ \\ \hline
-  $1$ & $1$ & $1$ \\
-  $1$ & $0$ & $0$ \\
-  $0$ & $1$ & $0$ \\
-  $0$ & $0$ & $1$
-\end{tabular}
-
-Def 7:
-tantology: always true regardless of values of the propositions
+Def 6: Biconditional state
+Example: "There is a smallese regardless of values of the propositions
 
 Contardiction: always false regardless of values of the propositions
 
@@ -310,5 +301,89 @@ $\exists \times \left( \neg P \left( x \right)  \right)$
 $\exists x \left( \forall y k \left( x, y \right) \right)$
 
 $\neg \exists x A\left( x \right) \equiv \forall x \neg A$
+
+
+\section{Sick break}
+Between the previous and next notes I was unable to make notes due to being sick
+
+\section{\nth{05} September 2023}
+
+FSM: Finite state machines
+
+$M = \left(S, I, O, f, g , S_0\right)$
+
+$S =$ states\\
+$I =$ input alphatbeth\\
+$O =$ output alphatbeth\\
+$f =$ transition function\\
+$g =$ function that assigns each pair of state and input a corresponding output.\\
+$s_0 =$ starting state
+
+$f: I \times S \rightarrow s$
+$g: I \times S \rightarrow s$
+
+Example:\\
+\begin{tabular}{cl}
+  FSM & $S - \left\{s_0, s_1, s_2, s_3\right\}$ \\
+  & $I = \left\{0, 1\right\}$\\
+  & $O = \left\{0, 1\right\}$
+\end{tabular}
+
+\begin{tabular}{c||c|c||c|c}
+  state & f: input 0 & f: input 1 & g: input 0 & g: input 1\\ \hline
+  $s_0$ & $s_1$ & $s_0$ & $1$ & $0$ \\ 
+  $s_1$ & $s_2$ & $s_0$ & $1$ & $1$ \\ 
+  $s_2$ & $s_1$ & $s_2$ & $0$ & $1$ \\ 
+  $s_3$ & $s_2$ & $s_1$ & $0$ & $0$ \\ 
+\end{tabular}
+
+\section{\nth{07} September 2023}
+
+\begin{tabular}{l}
+  $\left\{"4", "20", "3" \right\}$ \\
+  $\phi = \left\{ \; \right\}$ \\
+  $\lambda = "" $ \\
+\end{tabular}
+
+Exercise 1
+Find a phrase-structure grammar for each of these languages.
+
+1. The set consisting of the bit strings 0, 1, and 11.
+
+No, you can't just write \{1\}+\\
+2. All sets of bit strings containing only 1s.
+
+3. All sets of bit strings eith 0s in the beginning and 1s at the end.
+
+4. All sets of bit strings that starts with a s 0 followed nu am ebem mu,ber of 1s or none
+
+
+\section{\nth{11} September 2023}
+
+Regex
+\begin{tabular}{rl}
+  $R = a$ & matches aa\\
+  $R = aa$ & matches aa\\
+  $R = a+$ & matches more than 0 a's\\
+  $R = a | b$ & matches a or b\\
+  $R = a+|b+$ & matches sequencis of a or b\\
+  $R = (a|b)+$ & matches 
+\end{tabular}
+
+\section{\nth{12} September 2023}
+
+Graph Theory
+
+\begin{itemize}
+  \item Graph
+  \item Vertices
+  \item Edges
+  \item Directed Graph
+  \item Indegree ($-$)
+  \item Outdegree ($+$)
+\end{itemize}
+
+
+
 
 \end{document}
